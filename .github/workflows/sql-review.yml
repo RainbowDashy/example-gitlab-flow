@@ -20,7 +20,7 @@ jobs:
       BYTEBASE_PROJECT: "projects/project-sample"
       BYTEBASE_TARGETS: "instances/test-sample-instance/databases/hr_test"
       FILE_PATTERN: "migrations/*.sql"
-    if: github.ref == 'refs/heads/test'
+    if: github.base_ref == 'test'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -53,7 +53,7 @@ jobs:
       BYTEBASE_PROJECT: "projects/project-sample"
       BYTEBASE_TARGETS: "instances/prod-sample-instance/databases/hr_prod"
       FILE_PATTERN: "migrations/*.sql"
-    if: github.ref == 'refs/heads/prod'
+    if: github.base_ref == 'prod'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
